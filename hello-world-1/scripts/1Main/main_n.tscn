@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b1g2ibfo72i82"]
+
+[ext_resource type="Script" uid="uid://k7p7mjfgqv1m" path="res://scripts/1Main/main_n.gd" id="1_gj74t"]
+
+[node name="Main_n" type="Node2D" unique_id=1201112766]
+script = ExtResource("1_gj74t")
+
+[node name="Label" type="Label" parent="." unique_id=542007328]
+unique_name_in_owner = true
+offset_left = 499.0
+offset_top = 132.0
+offset_right = 599.0
+offset_bottom = 155.0
+text = "00 no text 00"
+
+[node name="B1" type="Button" parent="." unique_id=1148455677]
+offset_left = 399.0
+offset_top = 266.0
+offset_right = 677.0
+offset_bottom = 398.0
+text = "Cliick me"
+
+[connection signal="pressed" from="B1" to="." method="_on_b_1_pressed"]
