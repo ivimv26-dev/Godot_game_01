@@ -3,13 +3,16 @@ class_name Player extends CharacterBody2D
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 
-@export var speed = 400
+@export var move_speed = 400
 @export var acc = 400
 @onready var state_machine : PlayerStateMachine = $StateMachine
 @export var controls: PlayerControls = null
 
 func _ready() -> void:
 	state_machine.Initialize(self)
+	
+	print(self)
+	
 	pass
 
 
@@ -44,7 +47,22 @@ func SetDirection() -> bool:
 func _process(delta: float) -> void:
 	direction.x = Input.get_action_strength(controls.move_right) - Input.get_action_strength(controls.move_left)
 	direction.y = Input.get_action_strength(controls.move_down) - Input.get_action_strength(controls.move_up)
-	pass
+	
+	velocity = direction * move_speed
+	
+	if direction.x > 0:
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("walk")
+	elif direction.x < 0:
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("walk")
+	elif direction.y > 0:
+		$AnimatedSprite.play("walk_down")
+	elif direction.y < 0:
+		$AnimatedSprite.play("walk_up")
+	
+	print(get_position_delta())
+	
 
 func _physics_process(delta):
 	#get_input()
