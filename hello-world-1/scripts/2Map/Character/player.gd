@@ -44,7 +44,7 @@ func SetDirection() -> bool:
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction.x = Input.get_action_strength(controls.move_right) - Input.get_action_strength(controls.move_left)
 	direction.y = Input.get_action_strength(controls.move_down) - Input.get_action_strength(controls.move_up)
 	
@@ -64,6 +64,6 @@ func _process(delta: float) -> void:
 	print(get_position_delta())
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#get_input()
 	move_and_slide()
