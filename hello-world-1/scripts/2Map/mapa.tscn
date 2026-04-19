@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dl7chwv0h0oww"]
 
 [ext_resource type="Texture2D" uid="uid://e6pmmdfkk4dv" path="res://sprites/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap.png" id="1_qk7jl"]
+[ext_resource type="Texture2D" uid="uid://bvrq178g6r3me" path="res://icon.svg" id="3_r5msp"]
+[ext_resource type="PackedScene" uid="uid://dbghiq2107twy" path="res://scripts/2Map/Character/player.tscn" id="3_urlfe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pshm3"]
 texture = ExtResource("1_qk7jl")
@@ -150,6 +152,9 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_ledwd"]
 sources/0 = SubResource("TileSetAtlasSource_waff2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5msp"]
+size = Vector2(133.33301, 133.33331)
+
 [node name="Mapa" type="Node2D" unique_id=677884697]
 
 [node name="Layer_back" type="TileMapLayer" parent="." unique_id=1992439227]
@@ -163,3 +168,17 @@ tile_set = SubResource("TileSet_f3cpq")
 [node name="Layer_objects" type="TileMapLayer" parent="." unique_id=470644187]
 tile_map_data = PackedByteArray("AAANABUAAAAAAAQAAAAOABUAAAAAAAQAAAANABYAAAAAAAQAAAAPABYAAAAAAAQAAAAPABUAAAAAAAQAAAAOABYAAAAAAAQAAAASAA4AAAAJAAAAAAARAA4AAAAJAAAAAAARAA0AAAAJAAAAAAASAA0AAAAJAAAAAAARABEAAAAJAAAAAAASABEAAAAJAAAAAAASABAAAAAJAAAAAAARABcAAAAJAAAAAAARABYAAAAJAAAAAAASABYAAAAJAAAAAAASABcAAAAJAAAAAAAKAAQAAAAMAAMAAAAJAAQAAAAMAAMAAAAMAA4AAAAMAAMAAAANAA4AAAAMAAMAAAALABUAAAAOAAMAAAAKABYAAAAOAAMAAAAKABcAAAAOAAMAAAALABcAAAAOAAMAAAAKABUAAAAOAAMAAAALABYAAAAOAAMAAAAUABYAAAAOAAMAAAATABUAAAAOAAMAAAAJAA4AAAAOAAMAAAAJAA0AAAAOAAMAAAAIAA0AAAAOAAMAAAAIAA4AAAAOAAMAAAAIABEAAAAOAAMAAAAJABEAAAAOAAMAAAAGAAQAAAAOAAMAAAAFAAQAAAAOAAMAAAAGAAcAAAAOAAMAAAAFAAcAAAAOAAMAAAAQAAQAAAABAAQAAAARAAQAAAABAAQAAAARAAMAAAABAAQAAAAQAAMAAAABAAQAAAASAAMAAAABAAQAAAASAAQAAAABAAQAAAA=")
 tile_set = SubResource("TileSet_ledwd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1734297123]
+position = Vector2(144, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1593465608]
+position = Vector2(0, 1.5258789e-05)
+scale = Vector2(0.18, 0.18)
+shape = SubResource("RectangleShape2D_r5msp")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1919724846]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("3_r5msp")
+
+[node name="CharacterBody2D" parent="." unique_id=380882493 instance=ExtResource("3_urlfe")]
