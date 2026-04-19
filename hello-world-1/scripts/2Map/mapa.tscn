@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvrq178g6r3me" path="res://icon.svg" id="3_r5msp"]
 [ext_resource type="PackedScene" uid="uid://dbghiq2107twy" path="res://scripts/2Map/Character/player.tscn" id="3_urlfe"]
 [ext_resource type="Resource" uid="uid://ksfm7uwar7pq" path="res://scripts/2Map/playercontrols_1.tres" id="4_f3cpq"]
+[ext_resource type="Resource" path="res://scripts/2Map/playercontrols_2.tres" id="5_f3cpq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pshm3"]
 texture = ExtResource("1_qk7jl")
@@ -183,4 +184,9 @@ scale = Vector2(0.18, 0.18)
 texture = ExtResource("3_r5msp")
 
 [node name="Player1" parent="." unique_id=380882493 instance=ExtResource("3_urlfe")]
+position = Vector2(584, 216)
 controls = ExtResource("4_f3cpq")
+
+[node name="Player2" parent="." unique_id=319922055 instance=ExtResource("3_urlfe")]
+position = Vector2(536, 224)
+controls = ExtResource("5_f3cpq")
