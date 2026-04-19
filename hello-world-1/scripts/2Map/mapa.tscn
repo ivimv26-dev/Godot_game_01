@@ -184,7 +184,6 @@ scale = Vector2(0.18, 0.18)
 texture = ExtResource("3_r5msp")
 
 [node name="Player1" parent="." unique_id=380882493 instance=ExtResource("3_urlfe")]
-<<<<<<< HEAD
 position = Vector2(416, 136)
 speed = null
 acc = null
@@ -194,11 +193,4 @@ controls = ExtResource("4_f3cpq")
 position = Vector2(240, 152)
 speed = null
 acc = null
-=======
-position = Vector2(584, 216)
-controls = ExtResource("4_f3cpq")
-
-[node name="Player2" parent="." unique_id=319922055 instance=ExtResource("3_urlfe")]
-position = Vector2(536, 224)
->>>>>>> 322b5f4 (commit 4)
 controls = ExtResource("5_f3cpq")
