@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bim63h33e8ro5"]
+
+[ext_resource type="Script" uid="uid://bhb0eloum1w5v" path="res://scripts/2Map/multi.gd" id="1_2dm6g"]
+[ext_resource type="PackedScene" uid="uid://dl7chwv0h0oww" path="res://scripts/2Map/mapa.tscn" id="1_eenmm"]
+
+[node name="Multi" type="Control" unique_id=1223453272]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2dm6g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=653221774]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewportContainer_P1" type="SubViewportContainer" parent="HBoxContainer" unique_id=680560752]
+layout_mode = 2
+
+[node name="SubViewport_P1" type="SubViewport" parent="HBoxContainer/SubViewportContainer_P1" unique_id=1429944079]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D_P1" type="Camera2D" parent="HBoxContainer/SubViewportContainer_P1/SubViewport_P1" unique_id=873920663]
+
+[node name="Mapa" parent="HBoxContainer/SubViewportContainer_P1/SubViewport_P1" unique_id=1845017536 instance=ExtResource("1_eenmm")]
+
+[node name="SubViewportContainer_P2" type="SubViewportContainer" parent="HBoxContainer" unique_id=75923477]
+layout_mode = 2
+
+[node name="SubViewport_P2" type="SubViewport" parent="HBoxContainer/SubViewportContainer_P2" unique_id=1181600992]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D_P2" type="Camera2D" parent="HBoxContainer/SubViewportContainer_P2/SubViewport_P2" unique_id=1452823974]
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=754371305]
+layout_mode = 2
