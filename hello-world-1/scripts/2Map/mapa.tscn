@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://e6pmmdfkk4dv" path="res://sprites/kenney_pixel-platformer-industrial-expansion/Tilemap/tilemap.png" id="1_qk7jl"]
 [ext_resource type="Texture2D" uid="uid://bvrq178g6r3me" path="res://icon.svg" id="3_r5msp"]
 [ext_resource type="PackedScene" uid="uid://dbghiq2107twy" path="res://scripts/2Map/Character/player.tscn" id="3_urlfe"]
+[ext_resource type="Resource" uid="uid://ksfm7uwar7pq" path="res://scripts/2Map/playercontrols_1.tres" id="4_f3cpq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pshm3"]
 texture = ExtResource("1_qk7jl")
@@ -181,4 +182,5 @@ shape = SubResource("RectangleShape2D_r5msp")
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("3_r5msp")
 
-[node name="CharacterBody2D" parent="." unique_id=380882493 instance=ExtResource("3_urlfe")]
+[node name="Player1" parent="." unique_id=380882493 instance=ExtResource("3_urlfe")]
+controls = ExtResource("4_f3cpq")

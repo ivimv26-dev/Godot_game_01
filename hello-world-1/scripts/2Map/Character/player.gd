@@ -6,6 +6,7 @@ var direction : Vector2 = Vector2.ZERO
 @export var speed = 400
 @export var acc = 400
 @onready var state_machine : PlayerStateMachine = $StateMachine
+@export var controls: PlayerControls = null
 
 func _ready() -> void:
 	state_machine.Initialize(self)
@@ -41,8 +42,8 @@ func SetDirection() -> bool:
 
 
 func _process(delta: float) -> void:
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	direction.x = Input.get_action_strength(controls.move_right) - Input.get_action_strength(controls.move_left)
+	direction.y = Input.get_action_strength(controls.move_down) - Input.get_action_strength(controls.move_up)
 	pass
 
 func _physics_process(delta):
